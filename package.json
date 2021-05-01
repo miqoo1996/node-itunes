@@ -1,0 +1,31 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "node app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon babel-node --presets --watch es2015 app.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Michael",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-back": "0.0.2",
+    "express-ejs-layouts": "^2.5.0",
+    "express-flash-messages": "^0.1.1",
+    "http": "0.0.1-security",
+    "mongoose": "^5.12.7",
+    "node-itunes-search": "^1.2.2",
+    "nodemon": "^2.0.4"
+  }
+}
