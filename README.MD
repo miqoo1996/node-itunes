@@ -6,7 +6,7 @@ Node.JS Itunes Search Engine
 
 -------
 
-There's used mongoDB as a database, you can find the configuration the configuration in the .env file.
+There's used mongoDB as a database, you can find the configurations in the .env file.
 
 Structure
 -----------------
