@@ -21,6 +21,6 @@ module.exports = {
     },
 
     async getByNameAlphabeticData(name, limit) {
-        return await itunesData.find({ trackName: { $regex: name } } ).limit(limit||50).sort( { "trackName": 1 });
+        return await itunesData.find({ trackName: { $regex:  new RegExp(name, 'gi')} }).limit(50).sort( { "trackName": 1 });
     }
 };
