@@ -38,7 +38,7 @@ app.post('/itunes-search', async (req, res) => {
 
     await itunesData.deleteAll();
 
-    await storeData(search, 500);
+    await storeData(search, 80);
 
     if (type === ALPHABETIC_SEARCH) {
         response = await itunesData.getByNameAlphabeticData(search, 50);
