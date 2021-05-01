@@ -4,8 +4,8 @@ const itunesData = mongoose.model('itunesData', new Schema({}, { strict: false }
 
 module.exports = {
     async store(data) {
-        const collectionData = new itunesData(data);
-        return await collectionData.save();
+        const collectionData = new itunesData();
+            return await collectionData.collection.insert(data);
     },
 
     async deleteAll() {
@@ -17,7 +17,7 @@ module.exports = {
     },
 
     async getByName(name, limit) {
-        return await itunesData.find({ trackName: { $regex: name } }).limit(limit||50);
+        return await itunesData.find({ trackName: { $regex:  new RegExp(name, 'gi')} }).limit(limit||50);
     },
 
     async getByNameAlphabeticData(name, limit) {

@@ -38,7 +38,7 @@ app.post('/itunes-search', async (req, res) => {
 
     await itunesData.deleteAll();
 
-    await storeData(search, 80);
+    await storeData(search, 500);
 
     if (type === ALPHABETIC_SEARCH) {
         response = await itunesData.getByNameAlphabeticData(search, 50);
@@ -62,15 +62,7 @@ const storeData = async (search, limit) => {
         return;
     }
 
-    let result = [];
-    for (const i in results) {
-        const {trackName} = results[i];
-        if (trackName) {
-            await itunesData.store(results[i]);
-        }
-    }
-
-    return results;
+    await itunesData.store(results);
 };
 
 app.listen(process.env.NODE_PORT, () => console.log('listening on *:' + process.env.NODE_PORT));
